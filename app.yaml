@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cws-integration-gateway-api-stag
+  namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  project: architecture-stag
+  source:
+    path: app-prueba
+    repoURL: https://github.com/luischacon74/deploy-prueba
+    targetRevision: main
